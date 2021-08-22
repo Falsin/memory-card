@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #282c33;
+  color: white;
+}
+header img {
+  width: auto;
+  height: 10vmin;
+}
