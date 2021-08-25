@@ -1,9 +1,12 @@
 import React from 'react';
 
-function ScoreBoard(params) {
+export default function (params) {
   return (
-    <div id='scoreBoard'>board</div>
+    <div id='scoreBoard'>
+      <ul>
+        <li>sss</li>
+        <li>ss</li>
+      </ul>
+    </div>
   )
 }
-
-export default ScoreBoard;

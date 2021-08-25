@@ -14,3 +14,22 @@ header {
     .size(auto, 10vmin)
   }
 }
+
+#cardsCollection {
+  display: flex;
+  flex-wrap: wrap;
+
+  div {
+    width: 20vmin;
+    margin: 1vmin;
+    border: solid red 1px;
+
+    &::before {
+      content: '';
+      display: block;
+      //.size(100%, 100%);
+      padding-top: 150%;
+      //background: red;
+    }
+  }
+}

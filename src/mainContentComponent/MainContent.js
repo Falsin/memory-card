@@ -1,11 +1,30 @@
-import React from 'react';
-import ScoreBoard from './scoreBoardComponent/ScoreBoard';
+import React, { useState, useEffect } from 'react';
+import { createClient } from 'pexels';
 
-function MainContent(params) {
+import ScoreBoard from './scoreBoardComponent/ScoreBoard';
+import CardsCollection from './cardsCollectionComponent/CardCollection';
+
+function MainContent() {
+    const [imagesArray, setImagesArray] = useState([]);
+
+    useEffect(() => {
+      const client = createClient('563492ad6f917000010000016beb93e33efd4bf5829a8d135c840222');
+      const query = 'Nature';
+      
+      client.photos.search({ query, per_page: 30 })
+        .then(response => setImagesArray(imagesArray.concat(response.photos)))
+    }, [])
+
   return (
     <section>
       <ScoreBoard />
-      <div id='cardsCollection'>collection</div>
+      <CardsCollection imgArr={imagesArray} />
+
+{/*       <div id='cardsCollection'>
+        {imagesArray.map((elem, id) => {
+          return <img src={elem.src.small} key={id} alt='a card' />
+        })}
+      </div> */}
     </section>
   )
 }

@@ -9,3 +9,17 @@ header img {
   width: auto;
   height: 10vmin;
 }
+#cardsCollection {
+  display: flex;
+  flex-wrap: wrap;
+}
+#cardsCollection div {
+  width: 20vmin;
+  margin: 1vmin;
+  border: solid red 1px;
+}
+#cardsCollection div::before {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}

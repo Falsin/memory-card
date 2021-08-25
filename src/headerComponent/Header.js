@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../img/logo.png'
 
-function Header() {
+export default function () {
   return (
     <header>
       <img src={logo} alt='A site logo'/>
@@ -9,5 +9,3 @@ function Header() {
     </header>
   )
 }
-
-export default Header;
