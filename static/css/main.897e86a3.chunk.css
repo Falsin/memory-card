@@ -1,0 +1,2 @@
+header{display:flex;justify-content:center;align-items:center;background:#282c33;color:#fff}header img{width:auto;height:10vmin}#cardsCollection{display:flex;flex-wrap:wrap}#cardsCollection div{width:20vmin;margin:1vmin;border:1px solid red}#cardsCollection div:before{content:"";display:block;padding-top:150%}
+/*# sourceMappingURL=main.897e86a3.chunk.css.map */
