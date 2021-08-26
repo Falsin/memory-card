@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { createClient } from 'pexels';
+/* import { createClient } from 'pexels'; */
 
 import ScoreBoard from './scoreBoardComponent/ScoreBoard';
 import CardsCollection from './cardsCollectionComponent/CardCollection';
 
-function MainContent() {
-    const [imagesArray, setImagesArray] = useState([]);
+function MainContent(props) {
+    /* const [imagesArray, setImagesArray] = useState([]);
 
     useEffect(() => {
       const client = createClient('563492ad6f917000010000016beb93e33efd4bf5829a8d135c840222');
@@ -13,12 +13,12 @@ function MainContent() {
       
       client.photos.search({ query, per_page: 30 })
         .then(response => setImagesArray(imagesArray.concat(response.photos)))
-    }, [])
+    }, []) */
 
   return (
     <section>
       <ScoreBoard />
-      <CardsCollection imgArr={imagesArray} />
+      <CardsCollection imgArr={props.cardArr} />
 
 {/*       <div id='cardsCollection'>
         {imagesArray.map((elem, id) => {

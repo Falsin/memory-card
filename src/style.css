@@ -1,3 +1,6 @@
+#root {
+  position: relative;
+}
 header {
   display: flex;
   justify-content: center;
@@ -22,4 +25,22 @@ header img {
   content: '';
   display: block;
   padding-top: 150%;
+}
+#loadBlock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: blue;
+  color: white;
+}
+#root > img {
+  width: 200px;
+  height: 200px;
+}
+#test {
+  width: 300px;
+  height: 300px;
+  border: solid red 1px;
 }
