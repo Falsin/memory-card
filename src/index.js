@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import LoadBlock from './LoadBlock';
 import './style.css'
 
 import Header from './headerComponent/Header';
-import MainContent from './mainContentComponent/MainContent'
+import MainContent from './mainContentComponent/MainContent';
+import Footer from './footerComponents/Footer';
+import LoadBlock from './LoadBlock';
+
 
 function CommonParent() {
   const [imageUploadStatus, setImageUploadStatus] = useState(false);
-  console.log('work')
 
   return (
     <>
       <Header />
       <MainContent changeUploadStatus={setImageUploadStatus} />
+      <Footer />
       {imageUploadStatus ? null : <LoadBlock />}
     </>
   )

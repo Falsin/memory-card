@@ -19,16 +19,23 @@ function CardsCollection(props) {
     return newArray;
   }
 
-
   return (
     <div id='cardsCollection'>
       {randomArray.map((elem, id) => {
-        return <div onClick={() => {
-          console.log(elem)
+        return <div className='visible' onClick={() => {
           props.setIdImage(elem.id)
-          //setRandomArr(createRandomArr(props.imgArr))
+          setRandomArr(createRandomArr(props.imgArr))
         }} key={id} style={{backgroundImage: `url(${elem.img})`}}></div>
       })}
+
+      {(() => {
+        let arrayOfElements = []
+        for (let i = 0; i < 15; i++) {
+          arrayOfElements.push(<div key={i + 40}></div>)
+        }
+
+        return arrayOfElements;
+      })().map(elem => elem)}
     </div>
   )
 }

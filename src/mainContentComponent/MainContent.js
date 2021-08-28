@@ -4,11 +4,9 @@ import { createClient } from 'pexels';
 import ScoreBoard from './scoreBoardComponent/ScoreBoard';
 import CardsCollection from './cardsCollectionComponent/CardCollection';
 
-const MainContent = React.memo((props) => {
+const MainContent = (props) => {
   const [imagesArray, setImagesArray] = useState([]);
   const [idImage, setIdImage] = useState(null);
-
-  console.log('work2')
 
   useEffect(() => {
     if (!imagesArray.length) {
@@ -34,24 +32,16 @@ const MainContent = React.memo((props) => {
 
   useEffect(() => {
     if (idImage !== null) {
-      console.log(idImage);
       setIdImage(null)
     }
   }, [idImage])
 
   return (
     <section>
-      <ScoreBoard />
+      <ScoreBoard imageId={idImage} />
       {imagesArray.length ? <CardsCollection imgArr={imagesArray} setIdImage={setIdImage} changeUploadStatus={props.changeUploadStatus} /> : null}
     </section>
   )
-})
-
-/* function setRandomArr(array) {
-  const maxVal = array.length + 0.5;
-  const minVal = 0.5;
-
-  return Math.round(minVal + Math.random() * (maxVal - minVal));
-} */
+}
 
 export default MainContent;
